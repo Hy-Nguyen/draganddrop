@@ -16,6 +16,7 @@ const config = {
       colors: {
         // Watch Dogs
         'green-wd': '#e0ff70',
+        'green-highlight-wd': '#BEDF49',
         'slate-wd': '#0F100D',
         'black-wd': '#030605',
         'green-light-wd': '#4C4D40',

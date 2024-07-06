@@ -133,13 +133,14 @@ function Grid({ items, isDragEnabled }: { items: ItemType[]; isDragEnabled: bool
 }
 
 function Item({ id, content, isDragEnabled }: ItemType & { isDragEnabled: boolean }) {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, transition, active } = useSortable({
     id: id,
     disabled: !isDragEnabled,
   });
   const style = {
     transform: CSS.Transform.toString(transform),
     transition: transition ? 'all 0.15s ease-out' : 'none',
+    zIndex: active ? 100 : 0,
   };
   return (
     <div
@@ -157,13 +158,14 @@ function Item({ id, content, isDragEnabled }: ItemType & { isDragEnabled: boolea
 }
 
 function GridItem({ id, content, isDragEnabled }: ItemType & { isDragEnabled: boolean }) {
-  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+  const { attributes, listeners, setNodeRef, transform, transition, active } = useSortable({
     id: id,
     disabled: !isDragEnabled,
   });
   const style = {
     transform: CSS.Transform.toString(transform),
     transition: transition ? 'all 0.15s ease-out' : 'none',
+    zIndex: active ? 100 : 0,
   };
   return (
     <div
